@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 posts">
+    <div id="index">
+      <div class="create-new-post">
+      <% if logged_in? %>
+        <p class="btn btn-danger"><%= link_to "Create New Post", new_post_path, class:'newpostlink' %></p>
+      <% end %>
+      </div>
+      <% @posts.each do |post| %>
+        <div id="each-post">
+            <p id="title"><%= post.title %></p>
+          <p id="body"><%= post.body %></p>
+          <p id="author">
+            Author:
+            <% if logged_in? %>
+              <%= post.author %>
+            <% else %>
+              <%= link_to "You have to log in to know the author", login_path %>
+            <% end %>
+          </p>
+        </div>
+      <% end %>
+    </div >
+
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<nav class='navbar navbar-default navbar-fixed-top navigation' %>
+  <%= link_to "The House of secrets", root_path, class:'navbar-brand', id:'root' %>
+  <ul class='nav nav-pills navbar-right'>
+    
+    <% if logged_in? %>
+      <li><%= link_to "Members list", users_path, id:'members_link' %></li>
+      <li><%= link_to "Profile", current_user, id:'profile_link' %></li>
+      <li><%= link_to "Log out", logout_path, method: :delete, id:'logout_link' %></li>
+    <% else %>
+      <li><%= link_to "Log in", login_path, id:'login_link' %></li>
+      <li><%= link_to "Sign in", new_user_path, id:'signin_link' %></li>
+    <% end %>
+  </ul>
+</nav>
