@@ -1,7 +1,7 @@
 <nav class='navbar navbar-default navbar-fixed-top navigation' %>
   <%= link_to "The House of secrets", root_path, class:'navbar-brand', id:'root' %>
   <ul class='nav nav-pills navbar-right'>
-    
+    <li><%= link_to "Members posts", posts_path,  id:'posts_link' %></li>
     <% if logged_in? %>
       <li><%= link_to "Members list", users_path, id:'members_link' %></li>
       <li><%= link_to "Profile", current_user, id:'profile_link' %></li>
